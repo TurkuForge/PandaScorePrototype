@@ -3,13 +3,11 @@ name: Deploy
 
 on:
   push:
-    branches: [ main ]
+    branches: [ github-action-setup ]
 
 jobs:
   build:
     runs-on: ubuntu-latest
-    environment:
-      name: github-pages
     strategy:
       matrix:
         node-version: [16.x]
