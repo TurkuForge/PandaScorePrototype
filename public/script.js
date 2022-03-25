@@ -1,9 +1,14 @@
+var myHeaders = new Headers();
+myHeaders.append('Accept', 'application/json');
+myHeaders.append('Authorization', 'Bearer R0vi6WY1uFj8VdmvyGWqoysJBPsVBt2k2ML5juj_bMRtjI7K8zs');
 
-  fetch('https://api.pandascore.co/leagues').then((res) => {
-    /*if (res.ok) {
-    console.log('SUCCESS');
-  } else {
-    console.log('Not Successful');
-  }*/
-  });
-  Brearer <0toZ1heZBQGb7vOjA_bF74zW7oOGr6puOyNvl_Scicu89FhM5-g0>
+var requestOptions = {
+  method: 'GET',
+  headers: myHeaders,
+  redirect: 'follow'
+};
+
+fetch('https://api.pandascore.co/leagues', requestOptions)
+  .then((response) => response.text())
+  .then((result) => console.log('Success', result))
+  .catch((error) => console.log('error', error));
