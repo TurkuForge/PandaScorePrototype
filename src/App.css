@@ -1,3 +1,15 @@
+body {
+  background-color: #17171b;
+  color: whitesmoke;
+}
+a:link {
+  color: black;
+  text-decoration: none;
+}
+a:visited {
+  color: #17171b;
+}
+
 .App {
   text-align: center;
 }
@@ -27,7 +39,13 @@
 .App-link {
   color: #61dafb;
 }
-
+.Title {
+  font-size: 48px;
+}
+.NotFound {
+  font-size: 90px;
+  color: whitesmoke;
+}
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);

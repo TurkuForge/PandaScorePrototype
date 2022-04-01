@@ -9,6 +9,16 @@ var requestOptions = {
 };
 
 fetch('https://api.pandascore.co/leagues', requestOptions)
-  .then((response) => response.text())
-  .then((result) => console.log('Success', result))
+  .then((response) => response.json())
+  .then((result) => {
+    console.log(result);
+    result
+      .map(({ image_url }) => image_url)
+      .forEach((url) => {
+        let img = document.createElement('img');
+        img.src = url;
+        var src = document.getElementById('png');
+        src.appendChild(img);
+      });
+  })
   .catch((error) => console.log('error', error));
