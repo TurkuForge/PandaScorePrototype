@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types';
-import GameCard from './GameCard';
+import GameCard from 'components/GameCard';
 
 const GameContainer = ({ games }) => {
   return (

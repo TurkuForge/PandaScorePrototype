@@ -1,6 +1,6 @@
 import { useParams } from 'react-router-dom';
-import '../App.css';
-import 'C:/Users/marti/Documents/Projects/Turku Forge/panda-score-prototype/src/style.css';
+import 'App.css';
+import 'style.css';
 
 const GamePage = () => {
   const params = useParams();
