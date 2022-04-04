@@ -19,7 +19,7 @@ function LandingPage() {
 
   return (
     <div className="App">
-      <h2 className="rubrik">Choose your game!</h2>
+      <h2 className="title">Choose your game!</h2>
       <GameContainer games={games} />
     </div>
   );
