@@ -1,5 +1,5 @@
 import './App.css';
-import 'style.css';
+import './style.css';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import NotFound from './pages/NotFound';
 import LandingPage from './pages/LandingPage';
