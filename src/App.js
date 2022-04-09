@@ -7,7 +7,7 @@ import GamePage from './pages/GamePage';
 
 function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename="/panda-score-prototype">
       <div className="App">
         <Routes>
           <Route path="/" element={<LandingPage />} exact />
