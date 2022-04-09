@@ -5,6 +5,7 @@ myHeaders.append('Authorization', 'Bearer ' + window.PANDA_SCORE_API_TOKEN);
 const requestOptions = {
   method: 'GET',
   headers: myHeaders,
+  mode: 'cors',
   redirect: 'follow'
 };
 
