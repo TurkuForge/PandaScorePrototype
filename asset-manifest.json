@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/panda-score-prototype/static/css/main.705e8f71.css",
-    "main.js": "/panda-score-prototype/static/js/main.2a674166.js",
+    "main.js": "/panda-score-prototype/static/js/main.32d2afc0.js",
     "static/js/787.6df90b50.chunk.js": "/panda-score-prototype/static/js/787.6df90b50.chunk.js",
     "index.html": "/panda-score-prototype/index.html",
     "main.705e8f71.css.map": "/panda-score-prototype/static/css/main.705e8f71.css.map",
-    "main.2a674166.js.map": "/panda-score-prototype/static/js/main.2a674166.js.map",
+    "main.32d2afc0.js.map": "/panda-score-prototype/static/js/main.32d2afc0.js.map",
     "787.6df90b50.chunk.js.map": "/panda-score-prototype/static/js/787.6df90b50.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.705e8f71.css",
-    "static/js/main.2a674166.js"
+    "static/js/main.32d2afc0.js"
   ]
 }
