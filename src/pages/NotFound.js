@@ -1,5 +1,5 @@
-import 'App.css';
-import 'style.css';
+import 'styles/App.css';
+import 'styles/style.css';
 
 const NotFound = () => {
   return (

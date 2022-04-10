@@ -15,6 +15,7 @@ jobs:
 
     env:
       REACT_APP_PANDA_SCORE_API_TOKEN: ${{ secrets.PAND_SCORE_API_TOKEN }}
+      REACT_APP_PANDA_SCORE_API_URL: https://easy-reverse-proxy.herokuapp.com
     steps:
       - uses: actions/checkout@v2
       - name: Use Node.js ${{ matrix.node-version }}

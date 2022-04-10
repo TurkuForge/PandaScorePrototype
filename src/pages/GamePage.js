@@ -1,5 +1,5 @@
-import 'App.css';
-import 'style.css';
+import 'styles/App.css';
+import 'styles/style.css';
 import LeagueContainer from 'components/LeagueContainer';
 import { useParams } from 'react-router-dom';
 import { useState, useEffect } from 'react';
@@ -11,9 +11,7 @@ const GamePage = () => {
   const [leagues, setLeagues] = useState([]);
 
   useEffect(async () => {
-    const { leagues: response, name } = await http(
-      `https://api.pandascore.co/videogames/${params.gameName}`
-    );
+    const { leagues: response, name } = await http(`videogames/${params.gameName}`);
     setGameName(name);
     setLeagues(
       response.map(({ image_url, name }) => {
