@@ -11,9 +11,7 @@ const GamePage = () => {
   const [leagues, setLeagues] = useState([]);
 
   useEffect(async () => {
-    const { leagues: response, name } = await http(
-      `https://api.pandascore.co/videogames/${params.gameName}`
-    );
+    const { leagues: response, name } = await http(`videogames/${params.gameName}`);
     setGameName(name);
     setLeagues(
       response.map(({ image_url, name }) => {
