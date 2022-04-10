@@ -1,5 +1,5 @@
-import 'App.css';
-import 'style.css';
+import 'styles/App.css';
+import 'styles/style.css';
 import { useState, useEffect } from 'react';
 import { http } from 'http';
 import GameContainer from 'components/GameContainer';
@@ -8,7 +8,7 @@ function LandingPage() {
   const [games, setGames] = useState([]);
 
   useEffect(async () => {
-    const response = await http('https://api.pandascore.co/videogames');
+    const response = await http('videogames');
     setGames(
       response.map(({ leagues, name, slug }) => {
         console.log(slug);
