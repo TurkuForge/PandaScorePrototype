@@ -1,5 +1,5 @@
-import 'App.css';
-import 'style.css';
+import 'styles/App.css';
+import 'styles/style.css';
 import { useState, useEffect } from 'react';
 import { http } from 'http';
 import GameContainer from 'components/GameContainer';

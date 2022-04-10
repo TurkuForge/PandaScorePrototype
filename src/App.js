@@ -1,9 +1,9 @@
-import './App.css';
-import './style.css';
+import 'styles/App.css';
+import 'styles/style.css';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import NotFound from './pages/NotFound';
-import LandingPage from './pages/LandingPage';
-import GamePage from './pages/GamePage';
+import NotFound from 'pages/NotFound';
+import LandingPage from 'pages/LandingPage';
+import GamePage from 'pages/GamePage';
 
 function App() {
   return (

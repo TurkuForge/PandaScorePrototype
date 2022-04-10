@@ -1,5 +1,5 @@
-import 'App.css';
-import 'style.css';
+import 'styles/App.css';
+import 'styles/style.css';
 import LeagueContainer from 'components/LeagueContainer';
 import { useParams } from 'react-router-dom';
 import { useState, useEffect } from 'react';
