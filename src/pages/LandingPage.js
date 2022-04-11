@@ -8,7 +8,7 @@ function LandingPage() {
   const [games, setGames] = useState([]);
 
   useEffect(async () => {
-    const response = await http('videogames');
+    const response = await http('https://api.pandascore.co/videogames');
     setGames(
       response.map(({ leagues, name, slug }) => {
         console.log(slug);

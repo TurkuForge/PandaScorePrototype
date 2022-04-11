@@ -1,13 +1,7 @@
-<<<<<<< HEAD
 import 'styles/App.css';
 import 'styles/style.css';
-import LeagueContainer from 'components/LeagueContainer';
-=======
-import 'App.css';
-import 'style.css';
 import LeagueCard from 'components/LeagueCard';
 import { Carousel } from '@trendyol-js/react-carousel';
->>>>>>> f45a4cb (Adds Carousel and Serie layout)
 import { useParams } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import { http } from 'http';
@@ -23,18 +17,20 @@ const GamePage = () => {
   const [leagues, setLeagues] = useState([]);
   const [resize, setResize] = useState(window.innerWidth);
 
-  useEffect(async () => {
-    const { leagues: response, name } = await http(`videogames/${params.gameName}`);
-    setGameName(name);
-    setLeagues(
-      response.map(({ image_url, name, series }) => {
-        return { image: image_url, title: name, series };
-      })
-    );
-  }, []);
   useEffect(() => {
     function handleResize() {
       setResize(window.innerWidth);
+    }
+
+    if (leagues.length) {
+      http(`videogames/${params.gameName}`).then(({ leagues: response, name }) => {
+        setGameName(name);
+        setLeagues(
+          response.map(({ image_url, name, series }) => {
+            return { image: image_url, title: name, series };
+          })
+        );
+      });
     }
 
     window.addEventListener('resize', handleResize);
