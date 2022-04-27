@@ -36,13 +36,13 @@ button[data-direction*='right'] {
 /* From cssbuttons.io by @nikk7007 */
 .Homebtn {
   padding: 0.8em 1.8em;
-  margin: 0px 0px 36px 100px;
+  margin: 8px 0px 0px 24px;
   border: 2px solid #17c3b2;
   display: flex;
   align-items: center;
   position: absolute;
   overflow: hidden;
-  bottom: 0;
+  top: 0;
   background-color: transparent;
   text-align: center;
   text-transform: uppercase;
@@ -56,6 +56,7 @@ button[data-direction*='right'] {
 
 .Homebtn::before {
   content: '';
+  color: #17c3b2;
   width: 0;
   height: 300%;
   position: absolute;
@@ -70,6 +71,7 @@ button[data-direction*='right'] {
 
 .Homebtn:hover::before {
   width: 105%;
+  color: #17c3b2;
 }
 
 .Homebtn:hover {
@@ -213,12 +215,13 @@ button[data-direction*='right'] {
 .sidenav a:hover {
   color: #f1f1f1;
 }
-.sidenav-title {
-  margin-top: 2px;
-  margin-left: 16px;
-  font-size: 22px;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+.game-title {
+  font-size: 64px;
   color: white;
+  position: sticky;
+  top: 0;
+  background-color: #17171b;
+  padding-bottom: 8px;
 }
 
 .main {

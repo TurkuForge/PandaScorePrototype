@@ -47,7 +47,7 @@ const GamePage = () => {
         </button>
       </div>
       <div ref={gameContainer} className="main">
-        <h1 className="Title">{gameName.toUpperCase()}</h1>
+        <h1 className="game-title">{gameName.toUpperCase()}</h1>
         <SeriesContainer series={leagues.map(({ series }) => series).flat()} />
         <LeagueCarousel />
       </div>
