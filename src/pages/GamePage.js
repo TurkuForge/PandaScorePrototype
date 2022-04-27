@@ -1,37 +1,37 @@
 import 'styles/App.css';
 import 'styles/style.css';
-import LeagueCard from 'components/LeagueCard';
-import { Carousel } from '@trendyol-js/react-carousel';
-import { useParams } from 'react-router-dom';
-import { useState, useEffect } from 'react';
+import { useParams, Link } from 'react-router-dom';
+import { useState, useEffect, useRef } from 'react';
 import { http } from 'http';
 import SeriesContainer from 'components/SeriesContainer';
-
-function handleClick() {
-  window.location.href = '/';
-}
+import LeagueCarousel from './../components/LeagueCarousel';
 
 const GamePage = () => {
   const params = useParams();
+  const gameContainer = useRef(null);
   const [gameName, setGameName] = useState(params.gameName);
   const [leagues, setLeagues] = useState([]);
-  const [resize, setResize] = useState(window.innerWidth);
+  const [setItemsAmount] = useState(0);
 
   useEffect(() => {
     function handleResize() {
-      setResize(window.innerWidth);
+      const gameCard = gameContainer.current?.querySelector('.league-box');
+      const amount = Math.floor(window.innerWidth / (gameCard?.offsetWidth ?? 500));
+      console.log(amount);
+      if (amount) {
+        setItemsAmount(amount);
+      }
     }
 
-    if (leagues.length) {
-      http(`videogames/${params.gameName}`).then(({ leagues: response, name }) => {
-        setGameName(name);
-        setLeagues(
-          response.map(({ image_url, name, series }) => {
-            return { image: image_url, title: name, series };
-          })
-        );
-      });
-    }
+    http(`videogames/${params.gameName}`).then(({ leagues: response, name }) => {
+      setGameName(name);
+      setLeagues(
+        response.map(({ image_url, name, series }) => {
+          return { image: image_url, title: name, series };
+        })
+      );
+      handleResize();
+    });
 
     window.addEventListener('resize', handleResize);
     return () => {
@@ -41,22 +41,15 @@ const GamePage = () => {
 
   return (
     <div>
-      <div className="sidenav">
-        <h4 className="sidenav-title">Series</h4>
-        <button className="Homebtn" onClick={handleClick}>
-          Home
+      <div>
+        <button className="Homebtn">
+          <Link to="/">Home</Link>
         </button>
-        <SeriesContainer series={leagues.map(({ series }) => series).flat()} />
       </div>
-      <div className="main">
+      <div ref={gameContainer} className="main">
         <h1 className="Title">{gameName.toUpperCase()}</h1>
-        {leagues.length && !!resize && (
-          <Carousel className="Carousel" responsive={false} dynamic={false}>
-            {leagues.map(({ image, title }, index) => (
-              <LeagueCard key={index} title={title ?? ''} image={image} />
-            ))}
-          </Carousel>
-        )}
+        <SeriesContainer series={leagues.map(({ series }) => series).flat()} />
+        <LeagueCarousel />
       </div>
     </div>
   );
