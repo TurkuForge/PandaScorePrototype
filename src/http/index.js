@@ -17,6 +17,7 @@ export const http = async (path) => {
   if (url in CACHE) {
     return Promise.resolve(CACHE[url]);
   }
+  console.log(url);
   return await fetch(url, requestOptions).then(async (response) => {
     CACHE[url] = await response.json();
     return CACHE[url];
