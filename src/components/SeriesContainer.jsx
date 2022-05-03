@@ -1,5 +1,6 @@
 import PropTypes from 'prop-types';
 import SeriesCard from 'components/SeriesCard';
+import LeagueCarousel from './LeagueCarousel';
 
 const SeriesContainer = ({ series }) => {
   const hasSeries = series && series.length > 0;
@@ -7,7 +8,15 @@ const SeriesContainer = ({ series }) => {
     <div className="series">
       {hasSeries &&
         series.length &&
-        series.map((serie, index) => <SeriesCard key={index} title={serie?.full_name ?? ''} />)}
+        series.map((serie, index) => {
+          console.log(serie);
+          return (
+            <>
+              <SeriesCard key={index} title={serie?.full_name ?? ''} />
+              <LeagueCarousel />
+            </>
+          );
+        })}
     </div>
   );
 };

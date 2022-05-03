@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 
 const SeriesCard = ({ title }) => {
   return (
-    <div className="Series-box">
+    <div className="series-box">
       <h4>{title}</h4>
     </div>
   );
